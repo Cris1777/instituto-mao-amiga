@@ -1,79 +1,116 @@
 # instituto-mao-amiga
 Aplicativo desenvolvido para a matéria de Construção de Software II.
 
-O objetivo do aplicativo é auxiliar o Instituto Mão Amiga a controlar e visualizar seus pontos de coleta e gerenciar o histórico de doações recebidas.
+## 🎯 Objetivo do Aplicativo
 
-📱 Tecnologias Utilizadas
+O aplicativo foi desenvolvido para ajudar o Instituto Mão Amiga no gerenciamento e acompanhamento dos pontos de coleta, além de permitir o registro e a consulta do histórico das doações recebidas.
 
-React Native com Expo
-TypeScript
-React Navigation (Tabs e Stack Navigator)
-AsyncStorage (armazenamento local e persistência offline)
+## 📱 Tecnologias Utilizadas
 
-📋 Roteiro de Demonstração
+* React Native com Expo
+* TypeScript
+* React Navigation, utilizando Tabs e Stack Navigator
+* AsyncStorage, responsável pelo armazenamento local e pela persistência dos dados mesmo quando o aplicativo estiver offline
 
-Siga o passo a passo abaixo para demonstrar e testar todas as funcionalidades principais do aplicativo:
+## 📋 Roteiro para Demonstração
 
-1. Registrar uma Doação
+### 1. Cadastrar uma Doação
 
-Na barra de navegação inferior, toque no botão de ação central (+ / Registrar Doação). (Alternativa: Se estiver na aba Doações vazia, toque no botão "Registrar doação").
-O modal Registrar Nova Doação será exibido:
-No campo Tipo de Item Doado, informe o item (ex.: Cesta Básica ou Casaco de Frio).
-No campo Quantidade, digite a quantidade desejada (ex.: 5).
-No campo Ponto de Destino, toque no seletor e escolha um dos pontos de coleta cadastrados (ex.: Sede Central).
-Toque no botão Salvar.
-A doação é gravada no armazenamento local e o modal é fechado.
+Na parte inferior da tela, pressione o botão central de ação **(+) / Registrar Doação**.
 
-2. Ver o Histórico de Doações
+Também é possível realizar o cadastro pela aba **Doações**, caso ela esteja sem registros, utilizando o botão **Registrar doação**.
 
-Na barra inferior, selecione a aba Doações (ícone de coração nas mãos).
-Observe as informações exibidas na tela:
-Card de Resumo Geral: exibe o total de doações registradas, o total acumulado de itens e o agrupamento com contagem por tipo de item.
-Lista de Histórico: cards listando cada doação com tipo de item, quantidade, data e horário de registro, além do ponto de coleta vinculado.
+Será aberta a janela **Registrar Nova Doação**. Preencha os campos solicitados:
 
-3. Filtrar Doações e Pontos
+* **Tipo de Item Doado:** informe o item que está sendo recebido, como "Cesta Básica" ou "Casaco de Frio".
+* **Quantidade:** informe a quantidade de itens, por exemplo, 5.
+* **Ponto de Destino:** selecione um dos pontos de coleta disponíveis, como "Sede Central".
 
-Na aba Doações, localize a barra de pesquisa "Buscar doações" no topo da lista.
-Digite parte do nome de um item cadastrado (ex.: Cesta ou Casaco).
-Note que a lista é filtrada dinamicamente em tempo real, exibindo apenas as doações correspondentes ao termo digitado.
-(Opcional) Teste também na aba Pontos usando a barra "Buscar pontos" para filtrar os pontos de coleta pelo nome.
-Apague o texto do campo de busca para restaurar a listagem completa.
+Depois de preencher as informações, pressione **Salvar**. O registro será armazenado localmente e a janela será fechada.
 
-4. Editar uma Doação
+### 2. Consultar o Histórico de Doações
 
-Na aba Doações, toque sobre o card de uma doação para abrir a tela de Detalhes da Doação.
-Na tela de detalhes, toque no botão "Editar Doação" (ou no ícone de lápis no canto superior direito do cabeçalho).
-O modal de edição abrirá com os dados atuais da doação preenchidos.
-Altere uma ou mais informações (por exemplo, aumente a quantidade de 5 para 10 ou mude o ponto de destino).
-Toque no botão Salvar.
-Observe que os detalhes na tela e o card de informações são atualizados imediatamente.
+Na barra de navegação inferior, entre na aba **Doações**, identificada pelo ícone de coração nas mãos.
 
-5. Excluir uma Doação
+Nessa tela serão apresentadas as informações relacionadas às doações cadastradas.
 
-Ainda na tela de Detalhes da Doação, toque no botão "Excluir Doação" (ou no ícone de lixeira no cabeçalho).
-Uma caixa de diálogo de confirmação será exibida: "Deseja realmente excluir esta doação? Esta ação não pode ser desfeita."
-Toque em Excluir para confirmar.
-O item é removido do armazenamento e o app retorna automaticamente para a tela de Doações, onde a lista e os totais do resumo já refletem a exclusão.
+No **Card de Resumo Geral**, é possível visualizar:
 
-6. Fechar e Reabrir o App (Teste de Persistência)
+* Quantidade total de doações registradas;
+* Número total de itens recebidos;
+* Quantidade de itens agrupados por tipo.
 
-Certifique-se de ter ao menos uma doação registrada no histórico.
-Feche completamente o aplicativo:
-No dispositivo/emulador: abra o menu de multitarefa e encerre o app (swipe up / fechar app), ou pressione r no terminal do Metro Bundler para recarregar.
-Abra o aplicativo novamente.
-Navegue até a aba Doações.
-Resultado esperado: Todos os registros previamente criados e editados continuam salvos e disponíveis, validando a persistência de dados local via AsyncStorage.
+Abaixo do resumo fica o **Histórico de Doações**, contendo cards com as informações de cada registro, como tipo do item, quantidade, data e horário do cadastro e o respectivo ponto de coleta.
 
-🚀 Como Executar o Projeto
+### 3. Pesquisar e Filtrar Registros
 
-Clone o repositório e instale as dependências:
+Dentro da aba **Doações**, utilize o campo **Buscar doações**, localizado na parte superior da lista.
 
+Digite parte do nome de algum item cadastrado, como **"Cesta"** ou **"Casaco"**. Os resultados serão atualizados automaticamente, mostrando somente as doações que correspondem ao texto informado.
+
+Também é possível realizar um teste semelhante na aba **Pontos**, utilizando o campo **Buscar pontos** para encontrar um ponto de coleta específico pelo nome.
+
+Para visualizar novamente todos os registros, basta apagar o conteúdo digitado no campo de pesquisa.
+
+### 4. Alterar uma Doação
+
+Na aba **Doações**, selecione o card referente à doação que deseja modificar.
+
+A tela de **Detalhes da Doação** será aberta. Nela, pressione **Editar Doação** ou utilize o ícone de lápis localizado no canto superior direito.
+
+Será exibida a janela de edição com os dados atuais da doação já preenchidos.
+
+Faça a alteração desejada, como mudar a quantidade de **5 para 10** ou selecionar outro ponto de destino.
+
+Após realizar as alterações, pressione **Salvar**. As novas informações serão atualizadas imediatamente na tela de detalhes e no card da doação.
+
+### 5. Remover uma Doação
+
+Na tela de **Detalhes da Doação**, pressione **Excluir Doação** ou utilize o ícone de lixeira no canto superior direito.
+
+Antes da exclusão, o aplicativo exibirá uma mensagem solicitando a confirmação:
+
+**"Deseja realmente excluir esta doação? Esta ação não pode ser desfeita."**
+
+Para prosseguir, pressione **Excluir**.
+
+Após a confirmação, o registro será removido do armazenamento local e o aplicativo retornará automaticamente para a tela de **Doações**. A lista e os valores apresentados no resumo serão atualizados de acordo com a exclusão realizada.
+
+### 6. Testar a Persistência dos Dados
+
+Para verificar se os dados permanecem salvos, primeiro certifique-se de que existe pelo menos uma doação registrada no histórico.
+
+Em seguida, feche completamente o aplicativo. No dispositivo ou emulador, abra o menu de aplicativos recentes e encerre o aplicativo utilizando o gesto de deslizar para cima ou a opção de fechar.
+
+Outra possibilidade é utilizar a tecla **r** no terminal do Metro Bundler para recarregar o aplicativo.
+
+Depois, abra o aplicativo novamente e acesse a aba **Doações**.
+
+Os registros cadastrados e as alterações realizadas anteriormente deverão continuar disponíveis. Isso confirma que os dados estão sendo mantidos localmente através do **AsyncStorage**, permitindo a persistência das informações mesmo após o fechamento do aplicativo.
+
+## 🚀 Como Rodar o Projeto
+
+Primeiramente, faça o clone do repositório e instale todas as dependências necessárias:
+
+```bash
 npm install
-Inicie o servidor Expo:
+```
 
+Depois, inicialize o servidor do Expo:
+
+```bash
 npx expo start
-Execute no emulador ou dispositivo físico:
+```
 
-Android: Pressione a no terminal ou execute npx expo start --android.
-iOS: Pressione i no terminal ou execute npx expo start --ios.
+Para executar o projeto em um dispositivo ou emulador Android, pressione **a** no terminal ou utilize:
+
+```bash
+npx expo start --android
+```
+
+Para executar no iOS, pressione **i** no terminal ou execute:
+
+```bash
+npx expo start --ios
+```
 

@@ -1,4 +1,4 @@
-# instituto-mao-amiga
+# instituto-mao-amiga.
 Aplicativo desenvolvido para a matéria de Construção de Software II.
 
 ## 🎯 Objetivo do Aplicativo
